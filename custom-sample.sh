@@ -15,7 +15,7 @@ export CustomBASE="00-custom"
 export CustomPATH="/config/$CustomBASE/$CustomNAME"
 
 # Parameters to pass at launch
-export CustomPARAMETERS="--listen 0.0.0.0 --port 9000"
+export CustomPARAMETERS="--listen 0.0.0.0"
 
 # Folders creation (Program files and output)
 mkdir -p ${CustomPATH}
