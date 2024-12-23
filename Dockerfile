@@ -1,8 +1,8 @@
-FROM lsiobase/ubuntu:jammy as base
+FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime as base
 
 COPY docker/root/ /
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 ENV WEBUI_VERSION=01
 ENV BASE_DIR=/config \
     SD_INSTALL_DIR=/opt/sd-install \
@@ -16,11 +16,24 @@ RUN apt-get update -y -q=2 && \
     nano \
     rsync \
     libgl1-mesa-glx \
-    libtcmalloc-minimal4 \
+    libgoogle-perftools-dev \
     libcufft10 \
     cmake \
     build-essential \
 #    python3-opencv \
+    fonts-dejavu-core \
+    jq \
+    moreutils \
+    aria2 \
+    libglfw3-dev \
+    libgles2-mesa-dev \
+    pkg-config \
+    libcairo2 \
+    libcairo2-dev \
+#    replace \
+#    replace \
+#    replace \
+#    replace \
     ffmpeg \
     libopencv-dev \
     dotnet-sdk-8.0 \
@@ -52,4 +65,4 @@ RUN cd /tmp && \
     chown -R abc:abc ${SD_INSTALL_DIR} && \
     chown -R abc:abc /home/abc
 
-EXPOSE 9000/tcp
+EXPOSE 7860/tcp
