@@ -13,7 +13,7 @@ RUN apt-get install -y -q=2 software-properties-common && \
     bc \
     rsync \
     libgl1-mesa-glx \
-    libtcmalloc-minimal4 \
+    libgoogle-perftools-dev \
     libcufft10 \
     libxft2 \
     xvfb \
@@ -102,7 +102,7 @@ RUN apt-get update -q && \
     nano \
     rsync \
     libgl1-mesa-glx \
-    libtcmalloc-minimal4 \
+    libgoogle-perftools-dev \
     libcufft10 \
     libxft2 \
     xvfb \
